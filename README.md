@@ -1,4 +1,4 @@
-# Tamim Sarwar — Black & White Hacker/Developer Portfolio
+# Tamim Sarwar — Developer Portfolio
 
 Advanced monochrome portfolio with a professional hacker/developer aesthetic.
 
