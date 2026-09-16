@@ -14,9 +14,6 @@ Advanced monochrome portfolio with a professional developer .
 - Skill-tree section
 - Responsive mobile layout
 
-### Customize
-Replace the `#` links in `index.html` with your real project/demo/source/social links.
-Replace `your@email.com` with your real email.
 
 The portfolio intentionally presents you as a beginner developer who is actively learning, rather than claiming experience you do not have.
 
