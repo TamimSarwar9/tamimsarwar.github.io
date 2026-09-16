@@ -1,6 +1,6 @@
 # Tamim Sarwar — Developer Portfolio
 
-Advanced monochrome portfolio with a professional hacker/developer aesthetic.
+Advanced monochrome portfolio with a professional developer .
 
 ### Design
 - Pure black / white / grayscale visual system
