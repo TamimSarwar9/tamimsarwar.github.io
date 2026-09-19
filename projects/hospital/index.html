@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MediCare Prime — Smart Hospital</title>
+<meta name="description" content="Premium responsive hospital management platform demo">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="loader"><div class="loader-logo">✚</div><b>MediCare Prime</b><span>Preparing your care experience...</span></div>
+<div id="toast"></div>
+<header class="topbar"><div class="container nav">
+<a class="brand" href="#home"><i>✚</i><span>MediCare <b>Prime</b></span></a>
+<button class="hamb" id="hamb">☰</button>
+<nav id="nav"><a href="#home">Home</a><a href="#doctors">Doctors</a><a href="#departments">Departments</a><a href="#services">Services</a><a href="#queue">Live Queue</a><a href="#contact">Contact</a></nav>
+<div class="nav-actions"><button class="btn ghost" id="loginBtn">Patient Login</button><button class="btn primary" data-book>Book Serial</button></div>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+<div class="hero-copy reveal"><span class="eyebrow">SMART HOSPITAL · 24/7 CARE</span><h1>Your health.<br><em>One simple</em> place.</h1>
+<p>Find trusted specialists, explore departments, choose your time, take a digital serial and follow your appointment — all from one beautiful patient portal.</p>
+<div class="actions"><button class="btn primary big" data-book>Book a Doctor <span>→</span></button><a class="btn outline big" href="#doctors">Explore Doctors</a></div>
+<div class="trust"><span>✓ Verified doctors</span><span>✓ Secure portal</span><span>✓ Easy booking</span></div></div>
+<div class="hero-visual reveal">
+<div class="orb"></div><div class="glass-card profile"><div class="doc-avatar">👩‍⚕️</div><div><small>AVAILABLE NOW</small><strong>Dr. Nusrat Jahan</strong><span>Gynecology · 11:00 AM</span></div><b class="online">●</b></div>
+<div class="glass-card floating"><small>LIVE PATIENTS</small><strong id="heroPatients">08</strong><span>waiting today</span><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="hero-circle"><div><span>✚</span><small>CARE</small><b>24/7</b></div></div>
+</div></div></section>
+
+<section class="quick container"><button data-book><span>🗓</span><b>Book a Serial<small>Choose doctor & time</small></b></button><a href="#doctors"><span>⌕</span><b>Find a Doctor<small>Search specialists</small></b></a><a href="#queue"><span>🔢</span><b>Live Queue<small>Track your serial</small></b></a><a href="#services"><span>🚑</span><b>Emergency<small>24/7 urgent care</small></b></a></section>
+
+<section class="section" id="doctors"><div class="container">
+<div class="section-head"><div><span class="kicker">MEET THE SPECIALISTS</span><h2>Care from people you can trust.</h2></div><div class="search"><span>⌕</span><input id="search" placeholder="Search doctor, specialty..."></div></div>
+<div class="filters" id="filters"></div><div class="doctor-grid" id="doctorsGrid"></div></div></section>
+
+<section class="section soft" id="departments"><div class="container"><div class="section-head"><div><span class="kicker">CLINICAL DEPARTMENTS</span><h2>Care for every chapter.</h2></div></div><div class="dept-grid" id="deptGrid"></div></div></section>
+
+<section class="section" id="services"><div class="container"><div class="section-head"><div><span class="kicker">PATIENT SERVICES</span><h2>More than an appointment.</h2></div></div>
+<div class="service-grid"><article><i>🚑</i><h3>Emergency & Trauma</h3><p>Rapid response and critical care support around the clock.</p><a href="tel:999">Call emergency →</a></article><article><i>🧪</i><h3>Laboratory</h3><p>Diagnostic testing with convenient digital reporting.</p><a href="#contact">Explore service →</a></article><article><i>🩻</i><h3>Imaging</h3><p>Modern imaging services with specialist interpretation.</p><a href="#contact">Learn more →</a></article><article><i>💊</i><h3>Pharmacy</h3><p>Prescription support and essential medicines.</p><a href="#contact">Contact pharmacy →</a></article></div></div></section>
+
+<section class="booking" id="booking"><div class="container booking-grid"><div class="booking-copy"><span class="kicker">ONLINE SERIAL</span><h2>Reserve your place.<br>Skip the uncertainty.</h2><p>See available doctors and time slots, enter patient details and receive a digital serial instantly.</p><div class="mini-points"><span>✓ Instant confirmation</span><span>✓ Live queue tracking</span><span>✓ Appointment history</span></div></div>
+<form class="book-card" id="form"><div class="form-head"><div><small>NEW APPOINTMENT</small><h3>Book a Doctor</h3></div><b>01</b></div>
+<label>Department<select id="dept" required></select></label><label>Doctor<select id="doc" required></select></label><div class="two"><label>Date<input id="date" type="date" required></label><label>Time<select id="time" required></select></label></div><div class="two"><label>Patient name<input id="name" required placeholder="Full name"></label><label>Phone<input id="phone" required placeholder="+880 1XXXXXXXXX"></label></div><label>Reason / notes<textarea id="notes" rows="2" placeholder="Optional"></textarea></label><button class="btn primary full">Confirm Serial <span>→</span></button></form></div></section>
+
+<section class="section queue-section" id="queue"><div class="container"><div class="section-head"><div><span class="kicker">REAL-TIME EXPERIENCE</span><h2>Live appointment queue.</h2></div><span class="live-badge">● LIVE UPDATES</span></div><div class="queue-card"><div class="queue-main"><div class="queue-number" id="queueNumber">A-08</div><div><small>NOW SERVING</small><h3>Cardiology · OPD 02</h3><p id="queueText">Dr. Arif Rahman is seeing patient A-07.</p></div></div><div class="queue-progress"><div><span>Current</span><b id="queueCurrent">A-08</b></div><div class="track"><i id="track"></i></div><div><span>Estimated wait</span><b id="wait">~ 12 min</b></div></div><button class="btn softbtn" id="queueAdvance">Simulate next patient</button></div></div></section>
+
+<section class="section portal"><div class="container"><div class="portal-card"><div><span class="kicker">PATIENT PORTAL</span><h2>Everything important,<br>in one calm dashboard.</h2><p>Appointments, prescriptions, reports, payments and profile information can live here once connected to your secure backend.</p></div><div class="portal-stats"><div><b>04</b><span>Appointments</span></div><div><b>12</b><span>Reports</span></div><div><b>02</b><span>Prescriptions</span></div></div><button class="btn light" id="portalBtn">Open Patient Portal →</button></div></div></section>
+
+<section class="section contact" id="contact"><div class="container contact-grid"><div><span class="kicker">VISIT · CALL · CONNECT</span><h2>We’re here when<br>you need us.</h2><p>123 Healthcare Avenue, Dhaka, Bangladesh</p><div class="contact-list"><span>☎ +880 1700-000000</span><span>✉ care@medicareprime.example</span><span>⏱ OPD 8 AM–10 PM · Emergency 24/7</span></div></div><div class="map-card"><div class="map-grid"></div><div class="map-pin">✚</div><div class="map-label"><b>MediCare Prime</b><small>Healthcare Avenue · Dhaka</small></div></div></div></section>
+</main>
+<footer><div class="container foot"><a class="brand" href="#home"><i>✚</i><span>MediCare <b>Prime</b></span></a><span>Premium hospital platform demo · © 2026</span><span>Privacy · Terms · Accessibility</span></div></footer>
+
+<div class="modal" id="modal"><div class="modal-box"><button id="close">×</button><div id="modalBody"></div></div></div>
+<script src="script.js"></script>
+</body></html>
